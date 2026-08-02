@@ -1,23 +1,37 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.hero { min-height: calc(100vh - 60px); position: relative; display: grid; place-items: center; padding: 7rem 1.5rem; overflow: hidden; background: #f5efe7; }
+.heroInner { width: min(1080px, 100%); position: relative; z-index: 1; }
+.eyebrow,.kicker { text-transform: uppercase; letter-spacing: .22em; font-size: .74rem; font-weight: 700; color: #806957; }
+.hero h1 { font-size: clamp(3.6rem, 8.5vw, 8rem); font-weight: 400; line-height: .92; max-width: 1000px; margin: 1.2rem 0 2rem; letter-spacing: -.05em; }
+.hero h1 em { color: #9d6657; font-weight: 400; }
+.heroCopy { max-width: 600px; font-size: 1.15rem; line-height: 1.75; color: #655c56; }
+.orb { position: absolute; width: 48vw; height: 48vw; right: -12vw; top: 10%; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #efd4c8, #c49a87 55%, #805f52); opacity: .55; filter: blur(1px); }
+.actions { display: flex; gap: 2rem; align-items: center; margin-top: 2.2rem; flex-wrap: wrap; }
+.primaryButton,.lightButton { display: inline-block; padding: 1rem 1.55rem; border-radius: 100px; background: #263e36; color: white; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 700; }
+.primaryButton:hover,.lightButton:hover { color: white; text-decoration: none; transform: translateY(-2px); }
+.textLink { color: #493f39; font-weight: 650; }
+.scrollCue { position: absolute; bottom: 2rem; font-size: 1.5rem; color: #493f39; }
+.section { padding: 8rem max(1.5rem, calc((100vw - 1120px)/2)); }
+.section > h2,.program h2,.founder h2,.callout h2,.waitlist h2 { font-size: clamp(2.6rem, 5vw, 5rem); line-height: 1; letter-spacing: -.04em; font-weight: 450; }
+.lead { font-size: 1.25rem; line-height: 1.8; max-width: 750px; color: #68605a; }
+.cardGrid,.quoteGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 4rem; }
+.card { padding: 2.5rem; background: #f4f0ea; min-height: 280px; }
+.card span,.weeks span { font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: #9d6657; }
+.card h3,.weeks h3 { font-size: 2rem; margin-top: 3.5rem; }
+.program { padding: 8rem max(1.5rem, calc((100vw - 1120px)/2)); background: #263e36; color: #f8f2ea; display: grid; grid-template-columns: .9fr 1.1fr; gap: 6rem; }
+.program .kicker { color: #d5ae9d; }
+.weeks article { border-top: 1px solid #718078; padding: 1.8rem 0; }
+.weeks h3 { margin: .5rem 0; }
+.weeks p { color: #c7cec9; }
+.quoteGrid figure { margin: 0; padding: 2.5rem; border: 1px solid #d8cec3; }
+.quoteGrid blockquote { border: 0; padding: 0; margin: 0 0 2rem; font-family: Georgia,serif; font-size: 1.4rem; line-height: 1.5; }
+.quoteGrid figcaption { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; }
+.disclaimer { font-size: .75rem; color: #817872; margin-top: 1rem; }
+.founder { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; padding: 8rem max(1.5rem, calc((100vw - 1120px)/2)); background: #eee4d9; }
+.portrait { min-height: 620px; background: linear-gradient(145deg,#d4b5a4,#8f6d60); display: grid; place-items: center; color: #f7eee8; text-transform: uppercase; letter-spacing: .16em; }
+.founder p:not(.kicker) { font-size: 1.15rem; line-height: 1.8; }
+.callout { text-align: center; padding: 8rem 1.5rem; background: #9d6657; color: #fff8f2; }
+.callout .kicker { color: #f2d8ca; }.callout p { max-width: 570px; margin: 1rem auto 2rem; }.lightButton { background: #fff8f2; color: #49382f; }.lightButton:hover { color: #49382f; }
+.resourceGrid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 3rem; }
+.resourceGrid a { color: inherit; padding: 2rem; border: 1px solid #d8cec3; transition: .2s; }.resourceGrid a:hover { text-decoration: none; background: #f4f0ea; transform: translateY(-3px); }.resourceGrid h3 { margin: 0; }.resourceGrid span { color: #9d6657; font-weight: 700; }
+.waitlist { padding: 8rem 1.5rem; text-align: center; background: #f5efe7; }.waitlist p { color: #655c56; }.form { display: flex; width: min(560px,100%); margin: 2rem auto 1rem; }.form input { flex: 1; padding: 1.1rem 1.3rem; border: 1px solid #b8a99d; background: white; font: inherit; }.form button { border: 0; background: #263e36; color: white; padding: 0 1.5rem; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; font-weight: 700; }.waitlist small { color: #817872; }
+@media(max-width:800px){.cardGrid,.quoteGrid,.program,.founder,.resourceGrid{grid-template-columns:1fr}.program,.founder{gap:2rem}.portrait{min-height:420px}.hero h1{font-size:3.7rem}.form{flex-direction:column}.form button{padding:1rem}.section,.program,.founder{padding-top:5rem;padding-bottom:5rem}}

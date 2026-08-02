@@ -1,19 +1,36 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+facial-wellness:
+  label: Facial Wellness
+  permalink: /facial-wellness
+  description: Gentle, evidence-aware facial care.
+puffiness:
+  label: Puffiness
+  permalink: /puffiness
+  description: Education about common facial puffiness.
+lymphatic-system:
+  label: Lymphatic System
+  permalink: /lymphatic-system
+  description: Accessible lymphatic-system education.
+education:
+  label: Education
+  permalink: /education
+  description: Face Rebirth educational articles.
+stress:
+  label: Stress
+  permalink: /stress
+  description: How stress can affect the face and body.
+nervous-system:
+  label: Nervous System
+  permalink: /nervous-system
+  description: Nervous-system-aware practices.
+myths:
+  label: Myths
+  permalink: /myths
+  description: Grounded reviews of facial wellness claims.
+jaw-tension:
+  label: Jaw Tension
+  permalink: /jaw-tension
+  description: Jaw tension education and gentle practices.
+healthy-ageing:
+  label: Healthy Ageing
+  permalink: /healthy-ageing
+  description: A realistic, whole-person approach to ageing.

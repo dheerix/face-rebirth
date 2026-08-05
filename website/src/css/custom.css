@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap');
 
 :root {
   --fr-ivory:#f8f5f1; --fr-warm-cream:#f4ede4; --fr-champagne-gold:#c8a46a; --fr-soft-gold:#d8b36a; --fr-dusty-rose:#c79ba4; --fr-muted-rose:#b97878; --fr-deep-cocoa:#59433f; --fr-muted-plum:#6e5565; --fr-sage-grey:#b7beb3; --fr-white:#ffffff;
-  --fr-font-display:"Cormorant Garamond",Georgia,serif; --fr-font-body:"Manrope",Arial,sans-serif;
+  --fr-font-display:"Italiana",Georgia,serif; --fr-font-body:"DM Sans",Arial,sans-serif;
   --ifm-color-primary:#8e5d67; --ifm-color-primary-dark:#7f535d; --ifm-color-primary-darker:#784e58; --ifm-color-primary-darkest:#634049; --ifm-color-primary-light:#9d6d76; --ifm-color-primary-lighter:#a5757e; --ifm-color-primary-lightest:#bb949b;
   --ifm-font-family-base:var(--fr-font-body); --ifm-heading-font-family:var(--fr-font-display); --ifm-background-color:var(--fr-white); --ifm-font-color-base:var(--fr-deep-cocoa); --ifm-navbar-background-color:rgba(248,245,241,.96); --ifm-footer-background-color:var(--fr-deep-cocoa);
 }
 html { scroll-behavior:smooth; scroll-padding-top:72px; }
 body { color:var(--fr-deep-cocoa); font-size:16px; }
 h1,h2,h3,h4 { color:inherit; }
-.navbar { min-height:64px; box-shadow:none; border-bottom:1px solid #e5d9d0; backdrop-filter:blur(12px); }
+.navbar { min-height:76px; box-shadow:none; border-bottom:1px solid #e5d9d0; backdrop-filter:blur(12px); }
 .navbar__brand { margin-right:1.5rem; }
-.navbar__logo { height:42px; }
-.navbar__logo img { width:42px; height:42px; object-fit:cover; object-position:50% 20%; border-radius:50%; }
+.navbar__logo { height:58px; }
+.navbar__logo img { width:58px; height:58px; object-fit:cover; object-position:50% 20%; border-radius:50%; }
 .navbar__title { font-family:var(--fr-font-display); font-size:1rem; letter-spacing:.12em; }
 .navbar__link { font-size:.78rem; }
 .navbar-cta { margin-top:.15rem; padding:.55rem 1rem!important; border-radius:999px; background:var(--fr-deep-cocoa); color:var(--fr-white)!important; }
@@ -24,3 +24,4 @@ h1,h2,h3,h4 { color:inherit; }
 .markdown h1,.blog-wrapper h1 { font-size:clamp(2.5rem,5vw,4.5rem); }
 .theme-doc-sidebar-container { background:var(--fr-ivory); }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media(max-width:996px){.navbar{min-height:64px}.navbar__logo{height:48px}.navbar__logo img{width:48px;height:48px}.navbar__title{font-size:.9rem}}

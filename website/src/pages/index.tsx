@@ -75,7 +75,7 @@ export default function Home(): ReactNode {
           <div className={styles.heroCopyBlock}>
             <p className={styles.eyebrow}>A holistic neuro-lymphatic face wellness method</p>
             <Heading as="h1">Rediscover the Face You Love.</Heading>
-            <p className={styles.heroCopy}>A gentle, guided approach to facial release, mindful movement and nervous-system care—created to help you look more rested, feel more balanced and reconnect with your natural radiance.</p>
+            <p className={styles.heroCopy}>A gentle, guided blend of yogic facial exercises, facial lymphatic drainage, yogic cleansing techniques, pranayama for the face and mind, mudras and mindfulness—created to help you look more rested, feel more balanced and reconnect with your natural radiance.</p>
             <p className={styles.heroNote}>Natural care. Consistent rituals. A face that feels like you again.</p>
             <div className={styles.actions}>
               <a className={styles.primaryButton} href="#waitlist">Join the Waitlist</a>

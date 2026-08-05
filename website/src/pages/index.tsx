@@ -1,6 +1,7 @@
 import type {FormEvent, ReactNode} from 'react';
 import {useState} from 'react';
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import BrandLogo from '../components/BrandLogo';
@@ -16,11 +17,20 @@ const pillars = [
 ];
 
 const methodCards = [
-  ['Facial Release', 'Gentle techniques for areas where stress and habitual tension are commonly held.'],
-  ['Neuro-Calming', 'Breath and sensory practices designed to create a calmer daily rhythm.'],
-  ['Lymphatic Support', 'Light, mindful movement that supports natural facial wellness.'],
-  ['Daily Integration', 'Short, repeatable rituals designed for real schedules—not perfect routines.'],
+  ['img/method/general-body-wakeup.png', 'General Body Wake-Up', 'Gentle movement awakens the body, encourages mobility and brings awareness to posture before facial practice begins.'],
+  ['img/method/facial-release.png', 'Facial Release', 'Mindful facial exercises and release techniques ease areas where everyday stress is commonly held.'],
+  // ['img/method/shatkriyas.png', 'Cleansing Through Shatkriyas', 'Carefully guided traditional cleansing practices create a clear, intentional beginning to the ritual.'],
+  ['img/method/pranayama.png', 'Neuro-Calming Through Pranayama', 'Pranayama practices for the face and mind help establish a slower, steadier rhythm.'],
+  ['img/method/mindfulness.png', 'Mindfulness', 'Notice, connect and integrate.'],
 ];
+
+function MethodImage({src, title}: {src: string; title: string}): ReactNode {
+  return <img className={styles.methodImage} src={useBaseUrl(src)} alt={`${title} illustration`}/>;
+}
+
+function MethodDivider(): ReactNode {
+  return <div className={styles.methodDivider} aria-hidden="true"><span/><svg viewBox="0 0 40 28" fill="none"><path d="M20 25c-1-9 0-16 0-22 5 5 8 10 7 15 3-3 6-4 10-4-2 7-7 11-17 11Zm0 0c-10 0-15-4-17-11 4 0 7 1 10 4-1-5 2-10 7-15"/></svg><span/></div>;
+}
 
 const weeks = [
   ['Week 01', 'Release', 'Notice and soften the patterns held through the jaw, brow, neck, posture and breath.'],
@@ -95,7 +105,7 @@ export default function Home(): ReactNode {
         <section className={`${styles.section} ${styles.method}`} id="method">
           <p className={styles.kicker}>The Method</p><Heading as="h2">More than facial exercise.</Heading>
           <p className={styles.lead}>Face Rebirth combines gentle facial practices with breath, posture awareness, neck mobility and nervous-system regulation. Each element is designed to work together as a realistic daily ritual.</p>
-          <div className={styles.methodGrid}>{methodCards.map(([title, copy], index) => <article key={title}><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><Heading as="h3">{title}</Heading><p>{copy}</p></article>)}</div>
+          <div className={styles.methodGrid}>{methodCards.map(([image, title, copy], index) => <article key={title}><MethodImage src={image} title={title}/><span className={styles.methodNumber} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><Heading as="h3">{title}</Heading><MethodDivider/><p>{copy}</p></article>)}</div>
         </section>
 
         <section className={styles.program} id="program">

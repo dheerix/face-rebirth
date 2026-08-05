@@ -20,14 +20,20 @@
 .cardGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:3.5rem; }
 .card { min-height:270px; padding:2.2rem; border:1px solid #e5d8ce; border-radius:24px; background:var(--fr-ivory); transition:transform .2s ease,border-color .2s ease; }
 .card:hover,.methodGrid article:hover,.resourceGrid article:hover { transform:translateY(-4px); border-color:var(--fr-champagne-gold); }
-.lineIcon,.methodGrid span,.weeks span { display:inline-block; color:var(--fr-muted-rose); font-size:.72rem; letter-spacing:.14em; }
+.lineIcon,.methodNumber,.weeks span { display:inline-block; color:var(--fr-muted-rose); font-size:.72rem; letter-spacing:.14em; }
 .lineIcon { padding-bottom:.8rem; border-bottom:1px solid var(--fr-champagne-gold); }
 .card h3 { margin:3rem 0 .7rem; font-size:2rem; }
 .card p,.methodGrid p,.resourceGrid p { color:#645956; line-height:1.7; }
 .method { background:var(--fr-warm-cream); }
-.methodGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:3.5rem; }
-.methodGrid article { min-height:300px; padding:2rem; border:1px solid #dfcfc4; border-radius:20px; background:rgba(255,255,255,.52); transition:.2s ease; }
-.methodGrid h3 { margin:3.5rem 0 .8rem; font-size:1.65rem; }
+.methodGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(1rem,2.5vw,2rem); margin-top:3.5rem; }
+.methodGrid article { min-width:0; padding:0 .25rem; text-align:center; background:transparent; transition:transform .2s ease; }
+.methodImage { display:block; width:100%; aspect-ratio:1; object-fit:cover; border-radius:48% 48% 46% 46%; mix-blend-mode:multiply; }
+.methodGrid .methodNumber { width:58px; height:58px; display:grid; place-items:center; margin:-.35rem auto 1rem; border:1px solid var(--fr-champagne-gold); border-radius:50%; background:var(--fr-warm-cream); color:#9a6b2e; font-family:var(--fr-font-display); font-size:1.45rem; letter-spacing:0; }
+.methodGrid h3 { min-height:3.4em; margin:0; color:var(--fr-deep-cocoa); font-size:clamp(1.3rem,2vw,1.7rem); line-height:1.12; letter-spacing:.035em; text-transform:uppercase; }
+.methodDivider { display:flex; align-items:center; justify-content:center; gap:.55rem; margin:.8rem auto .75rem; }
+.methodDivider span { width:30%; height:1px; background:var(--fr-champagne-gold); }
+.methodDivider svg { width:34px; height:25px; stroke:var(--fr-champagne-gold); stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+.methodGrid p { max-width:270px; margin:0 auto; font-size:.96rem; font-style:italic; line-height:1.75; }
 .program { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(3rem,7vw,7rem); padding:clamp(5rem,9vw,8.5rem) max(1.5rem,calc((100vw - 1120px)/2)); background:var(--fr-deep-cocoa); color:var(--fr-ivory); }
 .program .kicker { color:#e3c8cc; }
 .programIntro > p:not(.kicker) { max-width:520px; line-height:1.8; color:#eadfda; }
@@ -61,6 +67,7 @@
 .form button:disabled { opacity:.7; }
 .formMessage { min-height:1.5rem; color:var(--fr-muted-plum); font-weight:600; }
 .waitlist small { color:#766966; }
+@media(max-width:1100px){.methodGrid{grid-template-columns:repeat(2,1fr);row-gap:4rem}.methodImage{width:min(100%,420px);margin:auto}}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:5rem}.heroCopyBlock{order:1}.heroBrand{width:min(520px,90%);margin:auto}.methodGrid{grid-template-columns:repeat(2,1fr)}.program,.founder{grid-template-columns:1fr}.cardGrid{grid-template-columns:1fr}.portrait{min-height:440px;width:min(480px,100%)}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.resourceGrid{grid-template-columns:1fr}}
 @media(max-width:560px){.hero{min-height:calc(100vh - 64px);padding-top:3.5rem}.hero h1{font-size:3.5rem}.heroBrand{width:100%}.methodGrid{grid-template-columns:1fr}.form{grid-template-columns:1fr}.section,.program,.founder{padding-left:1.25rem;padding-right:1.25rem}.card{min-height:0}.actions>a{width:100%}}
 @media(prefers-reduced-motion:reduce){.card,.methodGrid article,.resourceGrid article,.primaryButton,.secondaryButton,.lightButton{transition:none}.card:hover,.methodGrid article:hover,.resourceGrid article:hover,.primaryButton:hover,.secondaryButton:hover,.lightButton:hover{transform:none}}

@@ -98,7 +98,7 @@ export default function Home(): ReactNode {
         <section className={styles.section} id="why">
           <p className={styles.kicker}>Why Face Rebirth?</p>
           <Heading as="h2">Your face reflects how life feels.</Heading>
-          <p className={styles.lead}>Stress, posture, sleep, breath, jaw tension and everyday habits can influence how the face looks and feels. Face Rebirth approaches facial wellness as part of one connected system—not as another quick beauty fix.</p>
+          <p className={styles.lead}>Stress, elevated cortisol levels, posture, sleep, breath, jaw tension, female hormonal shifts, inadequate hydration and everyday dietary habits can all influence how the face looks and feels. Face Rebirth approaches facial wellness as part of one connected system—not as another quick beauty fix.</p>
           <div className={styles.cardGrid}>{pillars.map(([title, copy], index) => <article className={styles.card} key={title}><span className={styles.lineIcon} aria-hidden="true">0{index + 1}</span><Heading as="h3">{title}</Heading><p>{copy}</p></article>)}</div>
         </section>
 

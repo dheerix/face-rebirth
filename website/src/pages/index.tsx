@@ -8,7 +8,7 @@ import BrandLogo from '../components/BrandLogo';
 import styles from './index.module.css';
 
 const FORMSPREE_ENDPOINT = '';
-const WHATSAPP_NUMBER = '918894947438';
+const WHATSAPP_NUMBER = '916395969938';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Dr. Neha, I'd like to learn more about Face Rebirth and the 21-Day Reset.")}`;
 
 const pillars = [
@@ -463,7 +463,7 @@ export default function Home(): ReactNode {
 						href={WHATSAPP_URL}
 						target='_blank'
 						rel='noopener noreferrer'
-						aria-label='Chat with Face Rebirth on WhatsApp at +91 88949 47438'
+						aria-label='Chat with Face Rebirth on WhatsApp at +91 63959 69938'
 					>
 						<img
 							className={styles.whatsappIcon}

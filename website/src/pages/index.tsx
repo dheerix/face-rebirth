@@ -388,14 +388,12 @@ export default function Home(): ReactNode {
 							20+ Years. Many Worlds. One Philosophy.
 						</p>
 					</div>
-					<div
-						className={styles.portrait}
-						role='img'
-						aria-label='Portrait placeholder for Dr. Neha Goel'
-					>
-						<span>
-							Dr. Neha Goel<small>Portrait coming soon</small>
-						</span>
+					<div className={styles.portrait}>
+						<img
+							src={useBaseUrl('img/founder/dr-neha-goel.png')}
+							alt='Dr. Neha Goel, founder of Face Rebirth'
+							loading='lazy'
+						/>
 					</div>
 					<p className={styles.founderBio}>
 						My journey has moved through medicine, prānic psychotherapy,

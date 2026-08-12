@@ -44,6 +44,25 @@ const experiences = [
   ['Created for Real Women', 'Supportive facial wellness for women balancing work, family, stress and changing routines.'],
 ];
 
+const founderJourney = [
+  ['dentistry', 'The Doctor', 'Dentistry', 'Where science, anatomy and my fascination with the face began.'],
+  ['energy', 'The Praanic Psychotherapist', 'Energy · Spirituality · Inner Wellbeing', 'Exploring how praanic energy, spiritual awareness and our inner state shape the way we carry ourselves.'],
+  ['yoga', 'The Yogi', 'Movement · Breath · Awareness', "A Master's in Yoga, 200-hour TTC and 50-hour Aerial Yoga TTC deepened my understanding of the body as an interconnected system."],
+  ['stage', 'The Woman on Stage', 'Mrs. India 2018 · Modelling · Acting', 'A world that taught me about beauty, confidence, appearance and the pressures women quietly carry.'],
+  ['wellness', 'The Wellness Explorer', 'Nutrition · Coaching · Entrepreneurship', 'Years of exploring health beyond a single discipline helped me begin seeing the whole woman.'],
+  ['perspective', 'The Woman at 44', 'Experience Becomes Philosophy', "Today I don't teach women to fight their age. I help them build a more conscious relationship with themselves."],
+];
+
+function JourneyIcon({name}: {name: string}): ReactNode {
+  const props = {className: styles.journeyIcon, viewBox: '0 0 40 40', fill: 'none', 'aria-hidden': true} as const;
+  if (name === 'dentistry') return <svg {...props}><path d="M13 6c-5 2-7 8-5 14 2 6 5 14 8 14 2 0 2-7 4-7s2 7 4 7c3 0 6-8 8-14 2-6 0-12-5-14-3-1-5 1-7 1s-4-2-7-1Z"/><path d="M16 11c2 1 6 1 8 0"/></svg>;
+  if (name === 'energy') return <svg {...props}><circle cx="20" cy="20" r="4"/><circle cx="20" cy="20" r="9" strokeDasharray="2 3"/><path d="M20 3v5m0 24v5M3 20h5m24 0h5M8 8l4 4m16 16 4 4m0-24-4 4M12 28l-4 4"/></svg>;
+  if (name === 'yoga') return <svg {...props}><circle cx="20" cy="8" r="4"/><path d="M20 12v12m0-7c-5 1-8 4-10 8m10-8c5 1 8 4 10 8M6 33c5-7 9-9 14-9s9 2 14 9M8 33h24"/></svg>;
+  if (name === 'stage') return <svg {...props}><path d="M7 34V10c8-7 18-7 26 0v24M7 12h26M12 34V16h16v18"/><path d="M15 8h10M20 4v8"/></svg>;
+  if (name === 'wellness') return <svg {...props}><path d="M20 36c-1-12 0-22 0-31 6 6 9 13 8 20 3-4 7-6 11-6-2 10-8 16-19 17Zm0 0C9 35 3 29 1 19c4 0 8 2 11 6-1-7 2-14 8-20"/></svg>;
+  return <svg {...props}><circle cx="20" cy="20" r="13"/><path d="M7 21c5-6 9-9 13-9s8 3 13 9M10 26h20M20 3v5"/></svg>;
+}
+
 const resources = [
   ['Morning Face Reset', 'A grounding way to notice and soften morning tension.'],
   ['Five-Minute Face Ritual', 'A simple practice designed for a busy day.'],
@@ -120,12 +139,28 @@ export default function Home(): ReactNode {
         </section>
 
         <section className={styles.founder} id="founder">
-          <div className={styles.portrait} role="img" aria-label="Founder portrait placeholder"><span>Founder portrait coming soon</span></div>
-          <div><p className={styles.kicker}>Your Guide</p><Heading as="h2">Meet the Founder</Heading>
-            {/* TODO: Replace temporary founder copy with founder-approved biography and credentials. */}
-            <p>Face Rebirth was created by a dentist, model and experienced facial wellness practitioner who brings together anatomical awareness, years of personal practice and a deep understanding of how confidence and wellbeing are reflected through the face.</p><p>Her approach is gentle, educational and grounded in helping women care for their faces without pressure to become someone else.</p>
-            <div className={styles.founderDetails}><strong>Founder profile coming soon</strong><span>Full name · Credentials · Years of practice · Portrait · Origin story</span></div>
-            <a className={styles.secondaryButton} href="#why">Discover Her Philosophy</a>
+          <div className={styles.founderHeader}>
+            <p className={styles.kicker}>The Woman Behind the Philosophy</p>
+            <Heading as="h2">Dr. Neha Goel</Heading>
+            <p className={styles.credentials}>Dentist · Praanic Psychotherapist · Yoga Practitioner · Mrs. India 2018 · Wellness Mentor</p>
+            <p className={styles.founderStatement}>20+ Years. Many Worlds. One Philosophy.</p>
+          </div>
+          <div className={styles.portrait} role="img" aria-label="Portrait placeholder for Dr. Neha Goel">
+            <span>Dr. Neha Goel<small>Portrait coming soon</small></span>
+          </div>
+          <p className={styles.founderBio}>My journey has moved through medicine, praanic psychotherapy, spirituality, yoga, nutrition, entrepreneurship, pageantry, modelling and wellness. What once seemed like different chapters eventually revealed one common truth—the way we look and feel is deeply connected to the way we live.</p>
+
+          <div className={styles.journey}>
+            <div className={styles.journeyHeading}><p className={styles.kicker}>My Journey</p><Heading as="h3">Many Dimensions. One Woman.</Heading></div>
+            <ol className={styles.timeline}>{founderJourney.map(([icon, dimension, discipline, copy]) => <li key={dimension}><div className={styles.timelineMarker}><JourneyIcon name={icon}/></div><p className={styles.timelineDimension}>{dimension}</p><Heading as="h4">{discipline}</Heading><p>{copy}</p></li>)}</ol>
+          </div>
+
+          <div className={styles.founderPhilosophy} id="philosophy">
+            <blockquote>Dentistry taught me anatomy. Praanic psychotherapy taught me about energy and the inner self. Yoga taught me awareness. Pageantry taught me confidence. Life taught me perspective.</blockquote>
+            <Heading as="h3">And somewhere along that journey, Face Rebirth™ was born.</Heading>
+            <p>Not as another beauty technique, but as a way of bringing the different worlds I had studied, practised and lived into one simple philosophy of self-care.</p>
+            <div className={styles.brandBelief}><p>I am not here to teach women how to fight their age.</p><p>I want to help them rediscover the face—and the woman—they love.</p></div>
+            <a className={styles.secondaryButton} href="#philosophy">Discover My Philosophy <span aria-hidden="true">→</span></a>
           </div>
         </section>
 

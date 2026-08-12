@@ -43,10 +43,32 @@
 .weeks article { padding:1.7rem 0; border-top:1px solid #806762; }
 .weeks h3 { margin:.4rem 0; font-size:2rem; }
 .weeks p { margin:0; color:#e0d3ce; line-height:1.7; }
-.founder { display:grid; grid-template-columns:minmax(300px,.8fr) 1.2fr; align-items:center; gap:clamp(3rem,8vw,7rem); padding:clamp(5rem,9vw,8.5rem) max(1.5rem,calc((100vw - 1120px)/2)); background:var(--fr-warm-cream); }
-.portrait { min-height:560px; display:grid; place-items:center; border:1px solid var(--fr-champagne-gold); border-radius:180px 180px 24px 24px; background:var(--fr-dusty-rose); color:var(--fr-white); text-align:center; text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; }
-.founder p:not(.kicker) { max-width:650px; font-size:1.05rem; line-height:1.8; }
-.founderDetails { display:flex; flex-direction:column; gap:.25rem; margin:1.5rem 0; padding:1rem 0; border-block:1px solid #d9c6b9; color:#685b57; font-size:.85rem; }
+.founder { display:grid; grid-template-columns:minmax(300px,.68fr) 1.32fr; grid-template-areas:"portrait header" "portrait bio" "journey journey" "philosophy philosophy"; align-items:center; gap:2rem clamp(3rem,7vw,6.5rem); padding:clamp(5rem,9vw,8.5rem) max(1.5rem,calc((100vw - 1180px)/2)); background:var(--fr-warm-cream); }
+.founderHeader { grid-area:header; align-self:end; }
+.founder h2 { margin:.2rem 0 .8rem; font-size:clamp(4rem,7vw,7.2rem); }
+.credentials { max-width:760px; margin:0; color:var(--fr-muted-plum); font-size:.83rem; font-weight:700; line-height:1.7; letter-spacing:.07em; text-transform:uppercase; }
+.founderStatement { margin:1.8rem 0 0; font-family:var(--fr-font-display); color:var(--fr-deep-cocoa); font-size:clamp(1.7rem,3vw,2.5rem); line-height:1.2; }
+.portrait { grid-area:portrait; min-height:650px; align-self:stretch; display:grid; place-items:center; border:1px solid var(--fr-champagne-gold); border-radius:220px 220px 24px 24px; background:var(--fr-dusty-rose); color:var(--fr-white); text-align:center; text-transform:uppercase; letter-spacing:.14em; font-size:.9rem; }
+.portrait span { display:flex; flex-direction:column; gap:.65rem; }
+.portrait small { font-size:.65rem; opacity:.8; }
+.founderBio { grid-area:bio; align-self:start; max-width:760px; margin:0; color:#625552; font-size:1.07rem; line-height:1.9; }
+.journey { grid-area:journey; margin-top:clamp(3rem,7vw,6rem); padding-top:clamp(3rem,6vw,5rem); border-top:1px solid #d9c4b3; }
+.journeyHeading { display:flex; justify-content:space-between; align-items:end; gap:2rem; margin-bottom:3.5rem; }
+.journeyHeading h3 { margin:0; font-size:clamp(2.8rem,5vw,5rem); font-weight:500; line-height:1; }
+.timeline { position:relative; display:grid; grid-template-columns:repeat(6,1fr); gap:clamp(.8rem,2vw,1.8rem); margin:0; padding:0; list-style:none; }
+.timeline::before { content:""; position:absolute; top:25px; right:0; left:0; height:1px; background:var(--fr-champagne-gold); }
+.timeline li { position:relative; padding-top:4.5rem; }
+.timelineMarker { position:absolute; top:0; left:0; z-index:1; width:52px; height:52px; display:grid; place-items:center; border:1px solid var(--fr-champagne-gold); border-radius:50%; background:var(--fr-warm-cream); }
+.journeyIcon { width:29px; height:29px; stroke:var(--fr-muted-rose); stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; }
+.timelineDimension { margin:0 0 .5rem; color:var(--fr-muted-rose); font-size:.67rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.timeline h4 { min-height:2.6em; margin:0 0 .75rem; font-size:1.35rem; line-height:1.25; }
+.timeline li > p:last-child { margin:0; color:#685b57; font-size:.86rem; line-height:1.7; }
+.founderPhilosophy { grid-area:philosophy; max-width:980px; margin:clamp(4rem,8vw,7rem) auto 0; padding:clamp(3rem,6vw,5rem); border:1px solid #d9c4b3; border-radius:28px; background:rgba(255,255,255,.35); text-align:center; }
+.founderPhilosophy blockquote { max-width:850px; margin:0 auto 2.5rem; padding:0; border:0; color:var(--fr-muted-plum); font-family:var(--fr-font-display); font-size:clamp(1.7rem,3.3vw,2.75rem); font-style:italic; line-height:1.35; }
+.founderPhilosophy h3 { max-width:800px; margin:0 auto 1.3rem; font-size:clamp(2.5rem,5vw,4.6rem); font-weight:500; line-height:1; }
+.founderPhilosophy > p { max-width:700px; margin:0 auto; color:#675956; line-height:1.8; }
+.brandBelief { margin:2.5rem auto; padding:2rem 0; border-block:1px solid #d9c4b3; }
+.brandBelief p { margin:.3rem 0; color:var(--fr-deep-cocoa); font-family:var(--fr-font-display); font-size:clamp(1.65rem,3vw,2.5rem); line-height:1.25; }
 .callout { padding:clamp(5rem,9vw,8rem) 1.5rem; text-align:center; background:var(--fr-muted-plum); color:var(--fr-white); }
 .callout h2,.callout p { margin-left:auto; margin-right:auto; }
 .callout .kicker { color:#ead9dc; }
@@ -68,6 +90,7 @@
 .formMessage { min-height:1.5rem; color:var(--fr-muted-plum); font-weight:600; }
 .waitlist small { color:#766966; }
 @media(max-width:1100px){.methodGrid{grid-template-columns:repeat(2,1fr);row-gap:4rem}.methodImage{width:min(100%,420px);margin:auto}}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:5rem}.heroCopyBlock{order:1}.heroBrand{width:min(520px,90%);margin:auto}.methodGrid{grid-template-columns:repeat(2,1fr)}.program,.founder{grid-template-columns:1fr}.cardGrid{grid-template-columns:1fr}.portrait{min-height:440px;width:min(480px,100%)}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.resourceGrid{grid-template-columns:1fr}}
-@media(max-width:560px){.hero{min-height:calc(100vh - 64px);padding-top:3.5rem}.hero h1{font-size:3.5rem}.heroBrand{width:100%}.methodGrid{grid-template-columns:1fr}.form{grid-template-columns:1fr}.section,.program,.founder{padding-left:1.25rem;padding-right:1.25rem}.card{min-height:0}.actions>a{width:100%}}
+@media(max-width:1000px){.timeline{grid-template-columns:repeat(2,1fr);gap:3.5rem 2rem}.timeline::before{display:none}.timeline li{padding:3.5rem 0 0;border-top:1px solid #d9c4b3}.timelineMarker{top:-26px}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:5rem}.heroCopyBlock{order:1}.heroBrand{width:min(520px,90%);margin:auto}.methodGrid{grid-template-columns:repeat(2,1fr)}.program{grid-template-columns:1fr}.founder{grid-template-columns:1fr;grid-template-areas:"header" "portrait" "bio" "journey" "philosophy"}.cardGrid{grid-template-columns:1fr}.portrait{min-height:580px;width:min(520px,100%);margin:auto}.journeyHeading{display:block}.journeyHeading .kicker{margin-bottom:1rem}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.resourceGrid{grid-template-columns:1fr}}
+@media(max-width:560px){.hero{min-height:calc(100vh - 64px);padding-top:3.5rem}.hero h1{font-size:3.5rem}.heroBrand{width:100%}.methodGrid{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:2.8rem}.timeline h4{min-height:0}.portrait{min-height:470px}.founderPhilosophy{padding:2rem 1.25rem}.form{grid-template-columns:1fr}.section,.program,.founder{padding-left:1.25rem;padding-right:1.25rem}.card{min-height:0}.actions>a{width:100%}}
 @media(prefers-reduced-motion:reduce){.card,.methodGrid article,.resourceGrid article,.primaryButton,.secondaryButton,.lightButton{transition:none}.card:hover,.methodGrid article:hover,.resourceGrid article:hover,.primaryButton:hover,.secondaryButton:hover,.lightButton:hover{transform:none}}

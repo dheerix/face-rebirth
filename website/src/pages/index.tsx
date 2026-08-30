@@ -1,5 +1,4 @@
-import type { FormEvent, ReactNode } from 'react';
-import { useState } from 'react';
+import type { ReactNode } from 'react';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
@@ -7,7 +6,7 @@ import Heading from '@theme/Heading';
 import BrandLogo from '../components/BrandLogo';
 import styles from './index.module.css';
 
-const FORMSPREE_ENDPOINT = '';
+const DEMO_BOOKING_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf01v6t0XaYaOEqM1dke80CMLNWVo4vgvetd7_OalZOdrISFQ/viewform?usp=publish-editor';
 const WHATSAPP_NUMBER = '916395969938';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Dr. Neha, I'd like to learn more about Face Rebirth and the 21-Day Reset.")}`;
 
@@ -220,34 +219,7 @@ const resources = [
 	],
 ];
 
-type FormStatus = 'idle' | 'loading' | 'success' | 'error' | 'unavailable';
-
 export default function Home(): ReactNode {
-	const [formStatus, setFormStatus] = useState<FormStatus>('idle');
-
-	async function submitWaitlist(event: FormEvent<HTMLFormElement>) {
-		event.preventDefault();
-		if (!FORMSPREE_ENDPOINT) {
-			if (process.env.NODE_ENV !== 'production')
-				console.warn('Face Rebirth waitlist endpoint is not configured.');
-			setFormStatus('unavailable');
-			return;
-		}
-		setFormStatus('loading');
-		try {
-			const response = await fetch(FORMSPREE_ENDPOINT, {
-				method: 'POST',
-				body: new FormData(event.currentTarget),
-				headers: { Accept: 'application/json' },
-			});
-			if (!response.ok) throw new Error('Waitlist submission failed');
-			event.currentTarget.reset();
-			setFormStatus('success');
-		} catch {
-			setFormStatus('error');
-		}
-	}
-
 	return (
 		<Layout
 			title='Face Rebirth™ | Rediscover the Face You Love'
@@ -274,8 +246,8 @@ export default function Home(): ReactNode {
 							again.
 						</p>
 						<div className={styles.actions}>
-							<a className={styles.primaryButton} href='#waitlist'>
-								Join the Waitlist
+							<a className={styles.primaryButton} href={DEMO_BOOKING_URL} target='_blank' rel='noopener noreferrer'>
+								Book Your Demo
 							</a>
 							<a className={styles.secondaryButton} href='#method'>
 								Explore the Method
@@ -342,8 +314,8 @@ export default function Home(): ReactNode {
 							tension, build a consistent wellness ritual and reconnect with a
 							more rested, expressive version of yourself.
 						</p>
-						<a className={styles.lightButton} href='#waitlist'>
-							Join the 21-Day Reset Waitlist
+						<a className={styles.lightButton} href={DEMO_BOOKING_URL} target='_blank' rel='noopener noreferrer'>
+							Book Your Demo
 						</a>
 					</div>
 					<div className={styles.weeks}>
@@ -497,42 +469,12 @@ export default function Home(): ReactNode {
 					<p className={styles.wordmark}>FACE REBIRTH™</p>
 					<Heading as='h2'>Rediscover the Face You Love.</Heading>
 					<p>
-						Join the waitlist for launch updates, introductory practices and
-						early access to the Face Rebirth 21-Day Reset.
+						Book an introductory demo to experience the Face Rebirth approach
+						and learn about the upcoming 21-Day Reset.
 					</p>
-					<form className={styles.form} onSubmit={submitWaitlist} noValidate>
-						<div>
-							<label htmlFor='waitlist-name'>First name</label>
-							<input
-								id='waitlist-name'
-								name='name'
-								type='text'
-								autoComplete='given-name'
-								required
-							/>
-						</div>
-						<div>
-							<label htmlFor='waitlist-email'>Email address</label>
-							<input
-								id='waitlist-email'
-								name='email'
-								type='email'
-								autoComplete='email'
-								required
-							/>
-						</div>
-						<button type='submit' disabled={formStatus === 'loading'}>
-							{formStatus === 'loading' ? 'Joining…' : 'Join the Waitlist'}
-						</button>
-					</form>
-					<div className={styles.formMessage} role='status' aria-live='polite'>
-						{formStatus === 'success' &&
-							'Thank you. You’re on the Face Rebirth waitlist.'}
-						{formStatus === 'error' &&
-							'Something went wrong. Please try again shortly.'}
-						{formStatus === 'unavailable' &&
-							'The waitlist is opening soon. Please check back shortly.'}
-					</div>
+					<a className={styles.primaryButton} href={DEMO_BOOKING_URL} target='_blank' rel='noopener noreferrer'>
+						Book Your Demo
+					</a>
 					<small>
 						No spam. Only Face Rebirth updates and early-access information.
 					</small>

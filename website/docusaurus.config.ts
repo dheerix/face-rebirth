@@ -2,6 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const DEMO_BOOKING_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf01v6t0XaYaOEqM1dke80CMLNWVo4vgvetd7_OalZOdrISFQ/viewform?usp=publish-editor';
+
 const config: Config = {
   title: 'Face Rebirth',
   tagline: 'Rediscover the Face You Love.',
@@ -60,7 +62,7 @@ const config: Config = {
         {href: 'https://facerebirth.com/#program', label: '21-Day Reset', position: 'left'},
         {href: 'https://facerebirth.com/#founder', label: 'Meet the Founder', position: 'left'},
         {to: '/resources', label: 'Resources', position: 'left'},
-        {href: 'https://facerebirth.com/#waitlist', label: 'Join the Waitlist', position: 'right', className: 'navbar-cta'},
+        {href: DEMO_BOOKING_URL, label: 'Book Your Demo', position: 'right', className: 'navbar-cta'},
       ],
     },
     footer: {
@@ -69,7 +71,7 @@ const config: Config = {
         {title: 'FACE REBIRTH™', items: [{label: 'Rediscover the Face You Love.', to: '/'}]},
         {title: 'Explore', items: [{label: 'The Method', href: 'https://facerebirth.com/#method'}, {label: '21-Day Reset', href: 'https://facerebirth.com/#program'}, {label: 'Free Resources', to: '/resources'}]},
         {title: 'Learn', items: [{label: 'Brand Philosophy', href: 'https://facerebirth.com/#why'}, {label: 'Documentation', to: '/docs/welcome'}]},
-        {title: 'Connect', items: [{label: 'Join the Waitlist', href: 'https://facerebirth.com/#waitlist'}, {label: 'Instagram — Coming Soon', href: 'https://facerebirth.com/#waitlist'}, {label: 'Discovery Call — Coming Soon', href: 'https://facerebirth.com/#call'}]},
+        {title: 'Connect', items: [{label: 'Book Your Demo', href: DEMO_BOOKING_URL}, {label: 'Instagram — Coming Soon', href: 'https://facerebirth.com/#waitlist'}, {label: 'Discovery Call — Coming Soon', href: 'https://facerebirth.com/#call'}]},
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Face Rebirth™. Educational content only. Face Rebirth does not provide medical diagnosis or treatment.`,
     },

@@ -95,21 +95,6 @@ const weeks = [
 	],
 ];
 
-const experiences = [
-	[
-		'Simple to Follow',
-		'Short practices with clear guidance and no complicated equipment.',
-	],
-	[
-		'Rooted in Consistency',
-		'A realistic daily rhythm that values repetition over quick fixes.',
-	],
-	[
-		'Created for Real Women',
-		'Supportive facial wellness for women balancing work, family, stress and changing routines.',
-	],
-];
-
 const founderJourney = [
 	[
 		'dentistry',
@@ -329,23 +314,32 @@ export default function Home(): ReactNode {
 					</div>
 				</section>
 
-				<section className={styles.section} id='experience'>
-					<p className={styles.kicker}>The Experience</p>
-					<Heading as='h2'>
-						Designed to feel gentle, grounded and achievable.
-					</Heading>
-					{/* TODO: Replace experience cards with verified participant testimonials when written consent is available. */}
-					<div className={styles.cardGrid}>
-						{experiences.map(([title, copy], index) => (
-							<article className={styles.card} key={title}>
-								<span className={styles.lineIcon} aria-hidden='true'>
-									0{index + 1}
-								</span>
-								<Heading as='h3'>{title}</Heading>
-								<p>{copy}</p>
-							</article>
-						))}
+				<section className={styles.testimonials} id='testimonials'>
+					<p className={styles.kicker}>Real Experiences</p>
+					<Heading as='h2'>Seven days of mindful facial care.</Heading>
+					<p className={styles.testimonialsIntro}>
+						Reflections shared by Face Rebirth participants after seven days of practice.
+					</p>
+					<div className={styles.testimonialGrid}>
+						<img
+							src={useBaseUrl('img/testimonials/face-rebirth-testimonial-1.png')}
+							alt='Participant before and after seven days, sharing that her face feels lighter, more lifted, fresher and calmer.'
+							loading='lazy'
+						/>
+						<img
+							src={useBaseUrl('img/testimonials/face-rebirth-testimonial-2.png')}
+							alt='Participant before and after seven days, sharing that her face feels lifted and refreshed and her skin looks brighter.'
+							loading='lazy'
+						/>
+						<img
+							src={useBaseUrl('img/testimonials/face-rebirth-testimonial-3.png')}
+							alt='Participant before and after seven days, sharing that her face looks less puffy and her skin looks brighter and more even.'
+							loading='lazy'
+						/>
 					</div>
+					<small className={styles.testimonialNote}>
+						Individual experiences vary. Images are shared by participants.
+					</small>
 				</section>
 
 				<section className={styles.founder} id='founder'>

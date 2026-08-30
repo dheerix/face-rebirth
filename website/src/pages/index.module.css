@@ -43,6 +43,12 @@
 .weeks article { padding:1.7rem 0; border-top:1px solid #806762; }
 .weeks h3 { margin:.4rem 0; font-size:2rem; }
 .weeks p { margin:0; color:#e0d3ce; line-height:1.7; }
+.testimonials { padding:clamp(5rem,9vw,8.5rem) max(1.5rem,calc((100vw - 1280px)/2)); background:var(--fr-white); }
+.testimonials h2 { max-width:850px; margin:.3rem 0 1.5rem; font-size:clamp(2.6rem,5.5vw,5rem); line-height:1; letter-spacing:-.025em; font-weight:500; }
+.testimonialsIntro { max-width:700px; color:#5e5350; font-size:1.08rem; line-height:1.8; }
+.testimonialGrid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(1rem,2vw,1.5rem); margin-top:3rem; align-items:start; }
+.testimonialGrid img { display:block; width:100%; height:auto; border:1px solid #e5d8ce; border-radius:20px; box-shadow:0 16px 42px rgba(65,46,42,.09); }
+.testimonialNote { display:block; margin-top:1.25rem; color:#766966; text-align:center; }
 .founder { display:grid; grid-template-columns:minmax(300px,.68fr) 1.32fr; grid-template-areas:"portrait header" "portrait bio" "journey journey" "philosophy philosophy"; align-items:center; gap:2rem clamp(3rem,7vw,6.5rem); padding:clamp(5rem,9vw,8.5rem) max(1.5rem,calc((100vw - 1180px)/2)); background:var(--fr-warm-cream); }
 .founderHeader { grid-area:header; align-self:end; }
 .founder h2 { margin:.2rem 0 .8rem; font-size:clamp(4rem,7vw,7.2rem); }
@@ -94,6 +100,6 @@
 .waitlist small { color:#766966; }
 @media(max-width:1100px){.methodGrid{grid-template-columns:repeat(2,1fr);row-gap:4rem}.methodImage{width:min(100%,420px);margin:auto}}
 @media(max-width:1000px){.timeline{grid-template-columns:repeat(2,1fr);gap:3.5rem 2rem}.timeline::before{display:none}.timeline li{padding:3.5rem 0 0;border-top:1px solid #d9c4b3}.timelineMarker{top:-26px}}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:5rem}.heroCopyBlock{order:1}.heroBrand{width:min(520px,90%);margin:auto}.methodGrid{grid-template-columns:repeat(2,1fr)}.program{grid-template-columns:1fr}.founder{grid-template-columns:1fr;grid-template-areas:"header" "portrait" "bio" "journey" "philosophy"}.cardGrid{grid-template-columns:1fr}.portrait{min-height:580px;width:min(520px,100%);margin:auto}.portrait img{min-height:580px}.journeyHeading{display:block}.journeyHeading .kicker{margin-bottom:1rem}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.resourceGrid{grid-template-columns:1fr}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:5rem}.heroCopyBlock{order:1}.heroBrand{width:min(520px,90%);margin:auto}.methodGrid{grid-template-columns:repeat(2,1fr)}.program{grid-template-columns:1fr}.testimonialGrid{grid-template-columns:1fr}.testimonialGrid img{width:min(100%,560px);margin:auto}.founder{grid-template-columns:1fr;grid-template-areas:"header" "portrait" "bio" "journey" "philosophy"}.cardGrid{grid-template-columns:1fr}.portrait{min-height:580px;width:min(520px,100%);margin:auto}.portrait img{min-height:580px}.journeyHeading{display:block}.journeyHeading .kicker{margin-bottom:1rem}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.resourceGrid{grid-template-columns:1fr}}
 @media(max-width:560px){.hero{min-height:calc(100vh - 64px);padding-top:3.5rem}.hero h1{font-size:3.5rem}.heroBrand{width:100%}.methodGrid{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:2.8rem}.timeline h4{min-height:0}.portrait,.portrait img{min-height:470px}.founderPhilosophy{padding:2rem 1.25rem}.form{grid-template-columns:1fr}.section,.program,.founder{padding-left:1.25rem;padding-right:1.25rem}.card{min-height:0}.actions>a{width:100%}}
 @media(prefers-reduced-motion:reduce){.card,.methodGrid article,.resourceGrid article,.primaryButton,.secondaryButton,.lightButton{transition:none}.card:hover,.methodGrid article:hover,.resourceGrid article:hover,.primaryButton:hover,.secondaryButton:hover,.lightButton:hover{transform:none}}

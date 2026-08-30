@@ -333,7 +333,7 @@ export default function Home(): ReactNode {
 						/>
 						<img
 							src={useBaseUrl('img/testimonials/face-rebirth-testimonial-3.png')}
-							alt='Participant before and after seven days, sharing that her face looks less puffy and her skin looks brighter and more even.'
+							alt='Participant before and after seven days, sharing that her face feels lighter and more lifted and she looks fresher and calmer.'
 							loading='lazy'
 						/>
 					</div>
